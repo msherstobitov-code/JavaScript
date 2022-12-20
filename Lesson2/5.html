@@ -32,7 +32,37 @@ Infinity делать не нужно, однако, в случае если б
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+/* Считает сумму переданных аргументов a и b.
+*/
+function sum(a,b) {
+    return(a + b);
+    }
+/* Считает разность переданных аргументов a и b при том вычитая из большего меньшее.
+*/
+  function subtraction(a,b) {
+   return Math.abs(a - b);
+  }
+/* Считает произведение переданных аргументов a и b.
+*/
+  function multiplication(a,b) {
+    return(a * b);
+  }
+/* Считает деление переданных аргументов a на b.
+*/
+  function division(a,b) {
+    return(a / b);
+  }
+/* Вычисляет операцию, переданную в третий параметр между двумя первыми
+   * аргументами функции и осуществляет вычисление.
+*/
+   function mathOperation(arg1, arg2, operation) {
+    switch (operation) {
+      case "+": return sum(arg1, arg2);
+      case "-": return difference(arg1, arg2);
+      case "*": return multiplication(arg1, arg2);
+      case "/": return division(arg1, arg2);
+      default: return NaN;
+    }
 </script>
 </body>
 </html>
