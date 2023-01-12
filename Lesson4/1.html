@@ -19,36 +19,45 @@
 -->
 <script>
   "use strict";
-    // Функция-конструктор для продукта, ES5.
+
+  // Функция-конструктор для продукта, принимает название продукта и цену.
   function ProductES5(name, price) {
+    // Записываем в созданный объект свойства.
     this.name = name;
     this.price = price;
   }
-  //  добавляем метод Discount, который будет уменьшать цену на 25%.
-  ProductES5.prototype.Discount = function() {
+
+  // В объект, который будет служить прототипом будущих продуктов добавляем
+  // метод make25Discount, который будет уменьшать цену продукта на 25%.
+  ProductES5.prototype.make25Discount = function() {
     this.price *= 0.75;
   };
-  const productES5 = new ProductES5('Манго', 320);
+
+  const productES5 = new ProductES5('Клавиатура', 1000);
   console.log(`Название: ${productES5.name}, цена: ${productES5.price}`);
-  productES5.Discount();
+  productES5.make25Discount();
   console.log(`Название: ${productES5.name}, цена: ${productES5.price}`);
 
+  // ---
 
   // Класс для продукта
   class ProductES6 {
     // Конструктор продукта
     constructor(name, price) {
+      // Записываем в созданный объект свойства.
       this.name = name;
       this.price = price;
     }
+
     // Метод будет уменьшать цену продукта на 25%.
-    Discount() {
+    make25Discount() {
       this.price *= 0.75;
     }
   }
-  const productES6 = new ProductES6('Ананас', 150);
+
+  const productES6 = new ProductES6('Клавиатура', 1000);
   console.log(`Название: ${productES6.name}, цена: ${productES6.price}`);
-  productES6.Discount();
+  productES6.make25Discount();
   console.log(`Название: ${productES6.name}, цена: ${productES6.price}`);
 </script>
 </body>
